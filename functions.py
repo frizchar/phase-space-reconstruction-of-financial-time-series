@@ -1,4 +1,5 @@
 import yfinance as yf
+import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt
 
@@ -17,10 +18,11 @@ def get_yahoo_finance_data(ticker_symbol:str, start_date: str, end_date: str):
     """
     stock = yf.Ticker(ticker_symbol)
     data = stock.history(start=start_date, end=end_date)
+    print('data type:', type(data))
     return data
 
 
-def plot_timeseries(data):
+def plot_timeseries(data: pd.DataFrame):
     """
     Plots the closing price of the selected stock over time.
 
@@ -35,7 +37,7 @@ def plot_timeseries(data):
     plt.show()
 
 
-def low_pass_filter(data, cutoff_freq, sample_rate, order=4):
+def low_pass_filter(data: pd.DataFrame, cutoff_freq, sample_rate, order=4):
     """
     Applies a low-pass filter to the input data.
 
@@ -55,7 +57,7 @@ def low_pass_filter(data, cutoff_freq, sample_rate, order=4):
     return filtered_data
 
 
-def plot_filtered_timeseries(data, cutoff_freq=0.01, sample_rate=1):
+def plot_filtered_timeseries(data: pd.DataFrame, cutoff_freq=0.01, sample_rate=1):
     """
     Plots the closing price of the selected stock over time after applying a low-pass filter.
 
@@ -76,7 +78,7 @@ def plot_filtered_timeseries(data, cutoff_freq=0.01, sample_rate=1):
     plt.show()
 
 
-def plot_3d_phase_space(data):
+def plot_3d_phase_space(data: pd.DataFrame):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10).
 
@@ -97,7 +99,7 @@ def plot_3d_phase_space(data):
     plt.show()
 
 
-def plot_3d_phase_space_of_filtered_data(data):
+def plot_3d_phase_space_of_filtered_data(data: pd.DataFrame):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10) after applying a low-pass filter.
 
