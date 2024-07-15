@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt
 
 
-def get_yahoo_finance_data(ticker_symbol:str, start_date: str, end_date: str):
+def get_yahoo_finance_data(ticker_symbol:str, start_date: str, end_date: str) -> pd.DataFrame:
     """
     Retrieves historical ata for the selected stock from Yahoo Finance.
 
@@ -18,7 +18,6 @@ def get_yahoo_finance_data(ticker_symbol:str, start_date: str, end_date: str):
     """
     stock = yf.Ticker(ticker_symbol)
     data = stock.history(start=start_date, end=end_date)
-    print('data type:', type(data))
     return data
 
 
@@ -37,7 +36,7 @@ def plot_timeseries(data: pd.DataFrame):
     plt.show()
 
 
-def low_pass_filter(data: pd.DataFrame, cutoff_freq, sample_rate, order=4):
+def low_pass_filter(data: pd.DataFrame, cutoff_freq, sample_rate, order=4) -> pd.DataFrame:
     """
     Applies a low-pass filter to the input data.
 
