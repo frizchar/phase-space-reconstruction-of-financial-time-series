@@ -76,7 +76,7 @@ def plot_filtered_data(data, cutoff_freq=0.01, sample_rate=1):
     plt.show()
 
 
-def plot_3d__phase_space(data):
+def plot_3d_phase_space(data):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10).
 
