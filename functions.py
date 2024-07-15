@@ -20,7 +20,7 @@ def get_yahoo_finance_data(ticker_symbol:str, start_date: str, end_date: str):
     return data
 
 
-def plot_stock(data):
+def plot_timeseries(data):
     """
     Plots the closing price of the selected stock over time.
 
@@ -55,7 +55,7 @@ def low_pass_filter(data, cutoff_freq, sample_rate, order=4):
     return filtered_data
 
 
-def plot_filtered_data(data, cutoff_freq=0.01, sample_rate=1):
+def plot_filtered_timeseries(data, cutoff_freq=0.01, sample_rate=1):
     """
     Plots the closing price of the selected stock over time after applying a low-pass filter.
 
