@@ -9,7 +9,7 @@ print(data.head())
 
 
 if __name__ == '__main__':
-    functions.plot_aapl_stock(data)
-    functions.plot_aapl_filtered(data)
-    functions.plot_3d(data)
-    functions.plot_3d_filtered(data)
+    functions.plot_stock(data)
+    functions.plot_filtered_data(data)
+    functions.plot_3d__phase_space(data)
+    functions.plot_3d_phase_space_of_filtered_data(data)
