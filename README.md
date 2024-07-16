@@ -1,4 +1,4 @@
-# Phase space of filtered stock data
+# Phase space reconstruction of financial data
 ### Overview
 We process historical data of stocks following the steps below:
 1. pull historical data of the selected stock using the [yfinance](https://pypi.org/project/yfinance/) package (_in our implementation we select the Apple stock_)
