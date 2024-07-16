@@ -1,10 +1,10 @@
 # Phase space of filtered stock data
 ### Overview
-We process historical data of stocks, following the steps below:
+We process historical data of stocks following the steps below:
 1. pull historical data of the selected stock using the [yfinance](https://pypi.org/project/yfinance/) package (_in our implementation we select the Apple stock_)
 1. apply low-pass Butterworth filtering on the stock data
 1. plot both initial and filtered stock data
-1. plot reconstructed phase space as in Doyne Farmer's famous paper _"Geometry from a Time Series"_
+1. plot reconstructed phase space as in Doyne Farmer's famous paper [Geometry from a Time Series](https://www.datascienceassn.org/sites/default/files/Geometry%20from%20a%20Time%20Series.pdf)
 
 ### Input parameters
 -  __ticker_symbol__ (_string_):= ticker symbol of selected stock
