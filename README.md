@@ -16,6 +16,7 @@ In this case we choose<br>
 -  __cutoff_freq__ (_float_):= cutoff frequency for the low-pass filter
 -  __sample_rate__ (_float_):= sampling rate of the input data
 -  __order__ (_int_):= order of the Butterworth filter
+-  __time_delay_parameter__ (_int_):= time delay parameter of the phase space embedding
 
 ### Dependencies
 The required packages are included in file ```requirements.txt```.<br>
