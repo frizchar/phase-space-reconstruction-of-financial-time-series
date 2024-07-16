@@ -77,7 +77,7 @@ def plot_filtered_timeseries(data: pd.DataFrame, filtered_close_prices: pd.DataF
     plt.show()
 
 
-def plot_3d_phase_space(close_prices: pd.DataFrame):
+def plot_3d_phase_space(close_prices: pd.DataFrame, time_delay_parameter: int):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10).
 
@@ -88,21 +88,21 @@ def plot_3d_phase_space(close_prices: pd.DataFrame):
     ax = plt.axes(projection='3d')
 
     close_prices_ = close_prices
-    ax.scatter3D(close_prices_[10:],
-                 close_prices_[5:-5],
-                 close_prices_[:-10],
-                 c=close_prices_[:-10],
+    ax.scatter3D(close_prices_[2*time_delay_parameter:],
+                 close_prices_[time_delay_parameter:-time_delay_parameter],
+                 close_prices_[:-2*time_delay_parameter],
+                 c=close_prices_[:-2*time_delay_parameter],
                  cmap='viridis')
 
     ax.set_xlabel('y(t)')
-    ax.set_ylabel('y(t-5)')
-    ax.set_zlabel('y(t-10)')
-    ax.set_title('Stock Price: y(t), y(t-5), y(t-10)')
+    ax.set_ylabel('y(t-' + str(time_delay_parameter) + ')')
+    ax.set_zlabel('y(t-' + str(2*time_delay_parameter) + ')')
+    ax.set_title('Stock Price: y(t), y(t-' + str(time_delay_parameter) + '), y(t-' + str(2*time_delay_parameter) + ')')
 
     plt.show()
 
 
-def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame):
+def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame, time_delay_parameter: int):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10) after applying a low-pass filter.
 
@@ -114,15 +114,15 @@ def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame):
 
     filtered_close_prices_ = filtered_close_prices
 
-    ax.scatter3D(filtered_close_prices_[10:],
-                 filtered_close_prices_[5:-5],
-                 filtered_close_prices_[:-10],
-                 c=filtered_close_prices_[:-10],
+    ax.scatter3D(filtered_close_prices_[2*time_delay_parameter:],
+                 filtered_close_prices_[time_delay_parameter:-time_delay_parameter],
+                 filtered_close_prices_[:-2*time_delay_parameter],
+                 c=filtered_close_prices_[:-2*time_delay_parameter],
                  cmap='viridis')
 
     ax.set_xlabel('y(t)')
-    ax.set_ylabel('y(t-5)')
-    ax.set_zlabel('y(t-10)')
-    ax.set_title('Stock Price (Filtered): y(t), y(t-5), y(t-10)')
-
+    ax.set_ylabel('y(t-' + str(time_delay_parameter) + ')')
+    ax.set_zlabel('y(t-' + str(2 * time_delay_parameter) + ')')
+    ax.set_title('Stock Price (Filtered): y(t), y(t-' + str(time_delay_parameter) +
+                 '), y(t-' + str(2 * time_delay_parameter) + ')')
     plt.show()
