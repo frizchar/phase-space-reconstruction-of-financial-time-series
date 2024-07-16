@@ -56,7 +56,7 @@ def low_pass_filter(data: pd.DataFrame, cutoff_freq: float, sample_rate: float, 
     return filtered_data
 
 
-def plot_filtered_timeseries(data: pd.DataFrame, filtered_close_prices):
+def plot_filtered_timeseries(data: pd.DataFrame, filtered_close_prices: pd.DataFrame):
     """
     Plots the closing price of the selected stock over time after applying a low-pass filter.
 
@@ -77,7 +77,7 @@ def plot_filtered_timeseries(data: pd.DataFrame, filtered_close_prices):
     plt.show()
 
 
-def plot_3d_phase_space(close_prices):
+def plot_3d_phase_space(close_prices: pd.DataFrame):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10).
 
@@ -102,7 +102,7 @@ def plot_3d_phase_space(close_prices):
     plt.show()
 
 
-def plot_3d_phase_space_of_filtered_data(filtered_close_prices):
+def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10) after applying a low-pass filter.
 
