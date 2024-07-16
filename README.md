@@ -14,8 +14,8 @@ In this case we choose<br>
 -  __start_date__ (_string_):= start date of historical data in 'YYYY-MM-DD' format
 -  __end_date__ (_string_):= end date of historical data in 'YYYY-MM-DD' format
 -  __cutoff_freq__ (_float_):= cutoff frequency for the low-pass filter
--  __sample_rate__ (_float_):= sampling rate of the input data
--  __order__ (_int_):= order of the Butterworth filter
+-  __sample_rate__ (_float_):= sampling rate of the input data used for the low-pass filter
+-  __order__ (_int_):= order of the Butterworth low-pass filter
 -  __time_delay_parameter__ (_int_):= time delay parameter of the phase space embedding
 
 ### Dependencies
