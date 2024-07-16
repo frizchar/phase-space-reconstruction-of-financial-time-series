@@ -36,7 +36,7 @@ def plot_timeseries(data: pd.DataFrame):
     plt.show()
 
 
-def low_pass_filter(data: pd.DataFrame, cutoff_freq, sample_rate, order=4) -> pd.DataFrame:
+def low_pass_filter(data: pd.DataFrame, cutoff_freq: float, sample_rate: float, order: int) -> pd.DataFrame:
     """
     Applies a low-pass filter to the input data.
 
@@ -56,7 +56,7 @@ def low_pass_filter(data: pd.DataFrame, cutoff_freq, sample_rate, order=4) -> pd
     return filtered_data
 
 
-def plot_filtered_timeseries(data: pd.DataFrame, cutoff_freq=0.01, sample_rate=1):
+def plot_filtered_timeseries(data: pd.DataFrame, filtered_close_prices):
     """
     Plots the closing price of the selected stock over time after applying a low-pass filter.
 
@@ -67,17 +67,17 @@ def plot_filtered_timeseries(data: pd.DataFrame, cutoff_freq=0.01, sample_rate=1
     """
     plt.figure(figsize=(12, 6))
 
-    close_prices = data['Close']
-    filtered_prices = low_pass_filter(close_prices, cutoff_freq=cutoff_freq, sample_rate=sample_rate)
+    data_ = data
+    filtered_close_prices_ = filtered_close_prices
 
-    plt.plot(data.index, filtered_prices)
+    plt.plot(data_.index, filtered_close_prices_)
     plt.xlabel('Date')
     plt.ylabel('Closing Price (Filtered)')
     plt.title('Stock Price Over Time (Filtered)')
     plt.show()
 
 
-def plot_3d_phase_space(data: pd.DataFrame):
+def plot_3d_phase_space(close_prices):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10).
 
@@ -87,8 +87,12 @@ def plot_3d_phase_space(data: pd.DataFrame):
     plt.figure(figsize=(8, 8))
     ax = plt.axes(projection='3d')
 
-    close_prices = data['Close']
-    ax.scatter3D(close_prices[10:], close_prices[5:-5], close_prices[:-10], c=close_prices[:-10], cmap='viridis')
+    close_prices_ = close_prices
+    ax.scatter3D(close_prices_[10:],
+                 close_prices_[5:-5],
+                 close_prices_[:-10],
+                 c=close_prices_[:-10],
+                 cmap='viridis')
 
     ax.set_xlabel('y(t)')
     ax.set_ylabel('y(t-5)')
@@ -98,7 +102,7 @@ def plot_3d_phase_space(data: pd.DataFrame):
     plt.show()
 
 
-def plot_3d_phase_space_of_filtered_data(data: pd.DataFrame):
+def plot_3d_phase_space_of_filtered_data(filtered_close_prices):
     """
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10) after applying a low-pass filter.
 
@@ -108,10 +112,12 @@ def plot_3d_phase_space_of_filtered_data(data: pd.DataFrame):
     plt.figure(figsize=(8, 8))
     ax = plt.axes(projection='3d')
 
-    close_prices = data['Close']
-    filtered_prices = low_pass_filter(close_prices, cutoff_freq=0.01, sample_rate=1)
+    filtered_close_prices_ = filtered_close_prices
 
-    ax.scatter3D(filtered_prices[10:], filtered_prices[5:-5], filtered_prices[:-10], c=filtered_prices[:-10],
+    ax.scatter3D(filtered_close_prices_[10:],
+                 filtered_close_prices_[5:-5],
+                 filtered_close_prices_[:-10],
+                 c=filtered_close_prices_[:-10],
                  cmap='viridis')
 
     ax.set_xlabel('y(t)')
