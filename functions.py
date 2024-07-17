@@ -62,8 +62,7 @@ def plot_filtered_timeseries(data: pd.DataFrame, filtered_close_prices: pd.DataF
 
     Args:
         data (pandas.DataFrame): Historical data for the selected stock
-        cutoff_freq (float): Cutoff frequency for the low-pass filter (default is 0.01).
-        sample_rate (float): Sampling rate of the input data (default is 1).
+        filtered_close_prices (pandas.DataFrame): filtered close prices for the selected stock
     """
     plt.figure(figsize=(12, 6))
 
@@ -82,7 +81,8 @@ def plot_3d_phase_space(close_prices: pd.DataFrame, time_delay_parameter: int):
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10).
 
     Args:
-        data (pandas.DataFrame): Historical data for the selected stock
+        close_prices (pandas.DataFrame): close prices for the selected stock
+        time_delay_parameter (int): Time delay parameter of the phase space reconstruction
     """
     plt.figure(figsize=(8, 8))
     ax = plt.axes(projection='3d')
@@ -107,7 +107,8 @@ def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame, ti
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10) after applying a low-pass filter.
 
     Args:
-        data (pandas.DataFrame): Historical data for the selected stock
+        filtered_close_prices (pandas.DataFrame): filtered close prices for the selected stock
+        time_delay_parameter (int): Time delay parameter of the phase space reconstruction
     """
     plt.figure(figsize=(8, 8))
     ax = plt.axes(projection='3d')
