@@ -1,7 +1,7 @@
 import functions
 
 # INPUT PARAMETERS
-ticker_symbol  = "AAPL"      # Ticker symbol of selected stock
+TICKER_SYMBOL = "AAPL"      # Ticker symbol of selected stock
 START_DATE = "2020-01-01"   # Start date of historical data in 'YYYY-MM-DD' format
 END_DATE = "2023-12-31"     # End date of historical data in 'YYYY-MM-DD' format
 CUTOFF_FREQ = 0.01          # Cutoff frequency for the low-pass filter
