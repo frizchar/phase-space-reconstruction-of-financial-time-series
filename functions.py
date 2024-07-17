@@ -3,18 +3,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt
 
-
-def get_yahoo_finance_data(ticker_symbol:str, start_date: str, end_date: str) -> pd.DataFrame:
+def get_yahoo_finance_data(ticker_symbol: str, start_date: str, end_date: str) -> pd.DataFrame:
     """
-    Retrieves historical ata for the selected stock from Yahoo Finance.
+    Retrieves historical data for the selected stock from Yahoo Finance.
 
     Args:
-        ticker_symbol (str): Ticker symbol of the stock
+        ticker_symbol (str): Ticker symbol of the stock.
         start_date (str): Start date in 'YYYY-MM-DD' format.
         end_date (str): End date in 'YYYY-MM-DD' format.
 
     Returns:
-        pandas.DataFrame: Historical data for the selected stock
+        pandas.DataFrame: Historical data for the selected stock.
     """
     stock = yf.Ticker(ticker_symbol)
     data = stock.history(start=start_date, end=end_date)
@@ -36,7 +35,7 @@ def plot_timeseries(data: pd.DataFrame):
     plt.show()
 
 
-def low_pass_filter(data: pd.DataFrame, cutoff_freq: float, sample_rate: float, order: int) -> pd.DataFrame:
+def low_pass_filter(data: pd.DataFrame, cutoff_freq: float, sample_rate: float, order: int = 4) -> pd.DataFrame:
     """
     Applies a low-pass filter to the input data.
 
@@ -61,8 +60,8 @@ def plot_filtered_timeseries(data: pd.DataFrame, filtered_close_prices: pd.DataF
     Plots the closing price of the selected stock over time after applying a low-pass filter.
 
     Args:
-        data (pandas.DataFrame): Historical data for the selected stock
-        filtered_close_prices (pandas.DataFrame): filtered close prices for the selected stock
+        data (pandas.DataFrame): Historical data for the selected stock.
+        filtered_close_prices (pandas.DataFrame): Filtered close prices for the selected stock.
     """
     plt.figure(figsize=(12, 6))
 
@@ -81,8 +80,8 @@ def plot_3d_phase_space(close_prices: pd.DataFrame, time_delay_parameter: int):
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10).
 
     Args:
-        close_prices (pandas.DataFrame): close prices for the selected stock
-        time_delay_parameter (int): Time delay parameter of the phase space reconstruction
+        close_prices (pandas.DataFrame): Close prices for the selected stock.
+        time_delay_parameter (int): Time delay parameter of the phase space reconstruction.
     """
     plt.figure(figsize=(8, 8))
     ax = plt.axes(projection='3d')
@@ -107,8 +106,8 @@ def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame, ti
     Plots the closing price of the selected stock according to the axes y(t), y(t-5), and y(t-10) after applying a low-pass filter.
 
     Args:
-        filtered_close_prices (pandas.DataFrame): filtered close prices for the selected stock
-        time_delay_parameter (int): Time delay parameter of the phase space reconstruction
+        filtered_close_prices (pandas.DataFrame): Filtered close prices for the selected stock.
+        time_delay_parameter (int): Time delay parameter of the phase space reconstruction.
     """
     plt.figure(figsize=(8, 8))
     ax = plt.axes(projection='3d')
@@ -123,7 +122,7 @@ def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame, ti
 
     ax.set_xlabel('y(t)')
     ax.set_ylabel('y(t-' + str(time_delay_parameter) + ')')
-    ax.set_zlabel('y(t-' + str(2 * time_delay_parameter) + ')')
+    ax.set_zlabel('y(t-' + str(2*time_delay_parameter) + ')')
     ax.set_title('Stock Price (Filtered): y(t), y(t-' + str(time_delay_parameter) +
-                 '), y(t-' + str(2 * time_delay_parameter) + ')')
+                 '), y(t-' + str(2*time_delay_parameter) + ')')
     plt.show()
