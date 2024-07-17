@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt
 
+
 def get_yahoo_finance_data(ticker_symbol: str, start_date: str, end_date: str) -> pd.DataFrame:
     """
     Retrieves historical data for the selected stock from Yahoo Finance.
