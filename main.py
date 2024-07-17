@@ -9,7 +9,7 @@ end_date = "2023-12-31"     # End date of historical data in 'YYYY-MM-DD' format
 cutoff_freq = 0.01          # Cutoff frequency for the low-pass filter
 sample_rate = 1             # Sampling rate of the input data
 order = 4                   # Order of the Butterworth filter
-time_delay_parameter = 25    # Time delay parameter of phase space embedding
+time_delay_parameter = 25   # Time delay parameter of phase space embedding
 ###########################
 
 
