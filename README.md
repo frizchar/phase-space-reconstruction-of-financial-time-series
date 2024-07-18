@@ -2,7 +2,7 @@
 ### Overview
 In this project we attempt to restructure the phase space of the ```AAPL``` stock.<br>
 Specifically, we follow the steps below:
-1. pull historical data of the selected stock using the [yfinance](https://pypi.org/project/yfinance/) package (_in our implementation we select the Apple stock_)
+1. pull historical data of the selected stock using the [yfinance](https://pypi.org/project/yfinance/) package
 1. apply a low-pass Butterworth filter on the stock data
 1. plot the stock time-series
 1. plot the reconstructed phase space of the time-series as in Doyne Farmer's famous paper [Geometry from a Time Series](https://www.datascienceassn.org/sites/default/files/Geometry%20from%20a%20Time%20Series.pdf)<br>
