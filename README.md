@@ -9,7 +9,7 @@ Specifically, we follow the steps below:
 1. apply a low-pass Butterworth filter on the data, in order to extract the low-frequency signal
 1. plot the stock time-series*
 1. plot the $3$-dimensional ($d = 3$) reconstructed phase space of the time-series*<br>
-\* steps 3 and 4 applied for both initial and filtered time series
+\* _steps 3 and 4 applied for both initial and filtered time series_
 
 ### Input parameters
 -  __ticker_symbol__ (_string_):= ticker symbol of selected stock
