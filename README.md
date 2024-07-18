@@ -5,7 +5,7 @@ Namely, any time series $x_i$ may be restructured as $d$-dimensional vectors of 
 where $d$ is the embedding dimension of the phase space and $\tau$ is the time delay parameter.<br><br>
 Specifically, we follow the steps below:
 1. pull historical data of the selected stock using the [yfinance](https://pypi.org/project/yfinance/) package
-1. apply a low-pass Butterworth filter on the data, in order to explore the low-frequency signal
+1. apply a low-pass Butterworth filter on the data, in order to extract the low-frequency signal
 1. plot the stock time-series
 1. plot the $3$-dimensional ($d = 3$) reconstructed phase space of the time-series
 
