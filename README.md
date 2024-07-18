@@ -1,7 +1,10 @@
 # Phase space reconstruction of financial data
 ### Overview
 In this project we attempt to reconstruct the phase space of the ```AAPL``` stock as in Doyne Farmer's famous paper [Geometry from a Time Series](https://www.datascienceassn.org/sites/default/files/Geometry%20from%20a%20Time%20Series.pdf).<br>
-Namely, any time series $\\{x_i\\}$ may be restructured as $d$-dimensional vectors of the form $\vec{x_i} = (^1x_i, ^2x_{i+\tau}, ..., ^dx_{i+(d-1)\cdot\tau})$,<br>
+Namely, any time series $\\{x_i\\}$ may be restructured as $d$-dimensional vectors of the form 
+<p align="center">
+$\vec{x_i} = (^1x_i, ^2x_{i+\tau}, ..., ^dx_{i+(d-1)\cdot\tau})$
+<p>
 where $d$ is the embedding dimension of the phase space and $\tau$ is the time delay parameter.
 
 Specifically, we follow the steps below:
