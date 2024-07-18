@@ -6,7 +6,9 @@ Specifically, we follow the steps below:
 1. apply a low-pass Butterworth filter on the stock data
 1. plot the stock time-series
 1. plot the reconstructed phase space of the time-series as in Doyne Farmer's famous paper [Geometry from a Time Series](https://www.datascienceassn.org/sites/default/files/Geometry%20from%20a%20Time%20Series.pdf)<br>
-In this case, we choose embedding dimension $d = 3$
+Namely, any time series $x_i$ may be restructured as $d$-dimensional vectors of the form $(^1x_i, ^2x_{i+\tau}, ..., ^dx_{i+(d-1)\cdot\tau})$,<br>
+where $d$ is the embedding dimension of the phase space and $\tau$ is the time delay parameter<br>
+In our example we plot the $3$-dimensional phase space, hense $d = 3$
 
 ### Input parameters
 -  __ticker_symbol__ (_string_):= ticker symbol of selected stock
