@@ -2,7 +2,8 @@
 ### Overview
 In this project we attempt to reconstruct the phase space of the ```AAPL``` stock as in Doyne Farmer's famous paper [Geometry from a Time Series](https://www.datascienceassn.org/sites/default/files/Geometry%20from%20a%20Time%20Series.pdf).<br>
 Namely, any time series $\\{x_i\\}$ may be restructured as $d$-dimensional vectors of the form $\vec{x_i} = (^1x_i, ^2x_{i+\tau}, ..., ^dx_{i+(d-1)\cdot\tau})$,<br>
-where $d$ is the embedding dimension of the phase space and $\tau$ is the time delay parameter.<br><br>
+where $d$ is the embedding dimension of the phase space and $\tau$ is the time delay parameter.
+
 Specifically, we follow the steps below:
 1. pull historical data of the selected stock using the [yfinance](https://pypi.org/project/yfinance/) package
 1. apply a low-pass Butterworth filter on the data, in order to extract the low-frequency signal
