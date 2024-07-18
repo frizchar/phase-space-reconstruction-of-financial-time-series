@@ -1,6 +1,7 @@
 # Phase space reconstruction of financial data
 ### Overview
-We process historical data of stocks following the steps below:
+In this project we explore the restructured phase space of a stock.<br>
+Specifically, we follow the steps below:
 1. pull historical data of the selected stock using the [yfinance](https://pypi.org/project/yfinance/) package (_in our implementation we select the Apple stock_)
 1. apply a low-pass Butterworth filter on the stock data
 1. plot the stock time-series
