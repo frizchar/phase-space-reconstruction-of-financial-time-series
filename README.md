@@ -12,13 +12,13 @@ Specifically, we follow the steps below:
 \** _applied to both initial and filtered time series_
 
 ### Input parameters
--  __ticker_symbol__ (_string_):= ticker symbol of selected stock
--  __start_date__ (_string_):= start date of historical data in 'YYYY-MM-DD' format
--  __end_date__ (_string_):= end date of historical data in 'YYYY-MM-DD' format
--  __cutoff_freq__ (_float_):= cutoff frequency for the low-pass filter
--  __sample_rate__ (_float_):= sampling rate of the input data used for the low-pass filter
--  __order__ (_int_):= order of the Butterworth low-pass filter
--  __time_delay_parameter__ (_int_):= time delay parameter of the phase space embedding
+-  __TICKER_SYMBOL__ (_string_):= ticker symbol of selected stock
+-  __START_DATE__ (_string_):= start date of historical data in 'YYYY-MM-DD' format
+-  __END_DATE__ (_string_):= end date of historical data in 'YYYY-MM-DD' format
+-  __CUTOFF_FREQ__ (_float_):= cutoff frequency for the low-pass filter
+-  __SAMPLE_RATE__ (_float_):= sampling rate of the input data used for the low-pass filter
+-  __ORDER__ (_int_):= order of the Butterworth low-pass filter
+-  __TIME_DELAY_PARAMETER__ (_int_):= time delay parameter of the phase space embedding
 
 ### Dependencies
 The required packages are included in file ```requirements.txt```.<br>
