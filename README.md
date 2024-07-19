@@ -25,4 +25,5 @@ The required packages are included in file ```requirements.txt```.<br>
 Python interpreter version used for this project: **3.9.4**
 
 ### Results
-![graphs](https://github.com/user-attachments/assets/ec31e1f0-9f03-420b-9c2c-d926f4c6ba08)
+![graphs](https://github.com/user-attachments/assets/e4d9a57f-abc3-4c67-a5ff-906c2db4d9aa)
+
