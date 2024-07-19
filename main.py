@@ -15,7 +15,7 @@ if __name__ == '__main__':
     filtered_close_prices = functions.low_pass_filter(close_prices, CUTOFF_FREQ, SAMPLE_RATE, ORDER)
     print(data.head())
 
-    functions.plot_timeseries(data)
-    functions.plot_filtered_timeseries(data, filtered_close_prices)
-    functions.plot_3d_phase_space(close_prices, TIME_DELAY_PARAMETER)
-    functions.plot_3d_phase_space_of_filtered_data(filtered_close_prices, TIME_DELAY_PARAMETER)
+    functions.plot_timeseries(data, TICKER_SYMBOL)
+    functions.plot_filtered_timeseries(data, filtered_close_prices, TICKER_SYMBOL)
+    functions.plot_3d_phase_space(close_prices, TIME_DELAY_PARAMETER, TICKER_SYMBOL)
+    functions.plot_3d_phase_space_of_filtered_data(filtered_close_prices, TIME_DELAY_PARAMETER, TICKER_SYMBOL)
