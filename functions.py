@@ -102,7 +102,7 @@ def plot_3d_phase_space(close_prices: pd.DataFrame, time_delay_parameter: int, t
     ax.set_xlabel('y(t)', fontsize=18)
     ax.set_ylabel('y(t-' + str(time_delay_parameter) + ')', fontsize=18)
     ax.set_zlabel('y(t-' + str(2*time_delay_parameter) + ')', fontsize=18)
-    ax.set_title(ticker_symbol + ' Stock Price:\n Restructured Phase Space', fontsize=21)
+    ax.set_title(ticker_symbol + ' Stock Price:\n Reconstructed Phase Space', fontsize=21)
     plt.show()
 
 
@@ -131,5 +131,5 @@ def plot_3d_phase_space_of_filtered_data(filtered_close_prices: pd.DataFrame,
     ax.set_xlabel('y(t)', fontsize=18)
     ax.set_ylabel('y(t-' + str(time_delay_parameter) + ')', fontsize=18)
     ax.set_zlabel('y(t-' + str(2*time_delay_parameter) + ')', fontsize=18)
-    ax.set_title(ticker_symbol + ' Stock Price (Filtered):\n Restructured Phase Space', fontsize=21)
+    ax.set_title(ticker_symbol + ' Stock Price (Filtered):\n Reconstructed Phase Space', fontsize=21)
     plt.show()
