@@ -102,11 +102,6 @@ def plot_3d_phase_space(close_prices: pd.DataFrame, time_delay_parameter: int, t
     ax.set_xlabel('y(t)', fontsize=18)
     ax.set_ylabel('y(t-' + str(time_delay_parameter) + ')', fontsize=18)
     ax.set_zlabel('y(t-' + str(2*time_delay_parameter) + ')', fontsize=18)
-    '''
-    ax.set_title(ticker_symbol + ' Stock Price: y(t), y(t-' +
-                 str(time_delay_parameter) + '), y(t-' +
-                 str(2*time_delay_parameter) + ')', fontsize=21)
-    '''
     ax.set_title(ticker_symbol + ' Stock Price:\n Restructured Phase Space', fontsize=21)
     plt.show()
 
