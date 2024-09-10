@@ -3,7 +3,7 @@
 In this project we attempt to reconstruct the phase space of the ```AAPL``` stock based on Doyne Farmer's famous paper [Geometry from a Time Series](https://www.datascienceassn.org/sites/default/files/Geometry%20from%20a%20Time%20Series.pdf).<br>
 Namely, any time series $\\{x_i\\}$ may be restructured as $d$-dimensional vectors of the form 
 <p align="center">
-$\vec{x_i} = (^1x_i, ^2x_{i+\tau}, ^3x_{i+2\tau}, ..., ^dx_{i+(d-1)\cdot\tau})$
+$\vec{x_i} = (x_i, x_{i+\tau}, x_{i+2\tau}, ..., x_{i+(d-1)\cdot\tau})$
 </p>
 
 where _d_ is the embedding dimension of the phase space and $\tau$ is the time delay parameter.
